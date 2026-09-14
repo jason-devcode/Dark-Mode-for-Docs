@@ -1,65 +1,66 @@
 # Selenized Docs
 
-Tema oscuro para Google Docs con paletas de luminosidad perceptual uniforme,
-pensado para reducir el ruido visual y la fatiga en sesiones largas.
+A dark theme for Google Docs built on perceptually uniform palettes, designed
+to cut visual noise and eye strain during long sessions.
 
-![Google Docs con el tema Selenized Dark aplicado](docs/captura.png)
+![Google Docs with the Selenized Dark theme applied](docs/captura.png)
 
-## Por qué
+## Why
 
-Los temas oscuros al uso invierten colores y ya. El problema real de una
-interfaz no es que sea clara, es que **compite por tu atención**: colores que
-saltan más que otros, anuncios, iconos a todo color, animaciones.
+Most dark themes just invert colors and stop there. The real problem with an
+interface isn't that it's bright — it's that it **competes for your
+attention**: colors that jump out more than others, ads, full-color icons,
+animations.
 
-Este tema ataca las dos cosas:
+This theme goes after both:
 
-- **Paletas calibradas.** Selenized Dark tiene los 16 colores ajustados para
-  que todos tengan la misma luminosidad percibida. Se distinguen por tono,
-  pero ninguno reclama atención por encima del resto.
-- **Menos elementos.** Se ocultan los promos de la barra (Google One, Gemini),
-  el logo, el avatar y el panel de complementos. Nada de eso aporta al
-  documento que estás escribiendo.
+- **Calibrated palettes.** Selenized Dark tunes all 16 colors to the same
+  perceived lightness. They stay distinguishable by hue, but none of them
+  demands attention over the rest.
+- **Fewer elements.** The toolbar promos (Google One, Gemini), the logo, the
+  account avatar and the add-on side panel are hidden. None of them do
+  anything for the document you're writing.
 
-## Instalación
+## Install
 
-No está en la Chrome Web Store. Se carga sin empaquetar:
+It isn't on the Chrome Web Store. Load it unpacked:
 
-1. Abre `chrome://extensions` (o `brave://extensions`).
-2. Activa **Modo de desarrollador**.
-3. **Cargar descomprimida** y selecciona esta carpeta.
+1. Open `chrome://extensions` (or `brave://extensions`).
+2. Turn on **Developer mode**.
+3. Click **Load unpacked** and pick this folder.
 
-## Paletas
+## Palettes
 
-Se eligen desde el popup y se aplican en caliente, sin recargar.
+Switch them from the popup — they apply live, no reload.
 
-| Paleta | Origen |
+| Palette | Source |
 |---|---|
-| **Selenized Dark** (por defecto) | [jan-warchol/selenized](https://github.com/jan-warchol/selenized) |
+| **Selenized Dark** (default) | [jan-warchol/selenized](https://github.com/jan-warchol/selenized) |
 | **Everforest Soft** | [sainnhe/everforest](https://github.com/sainnhe/everforest) |
 | **Rosé Pine Moon** | [rose-pine](https://rosepinetheme.com) |
 
-Son las mismas que uso en kitty, así que terminal y documento van a juego.
+They're the same ones I run in kitty, so terminal and document match.
 
-## Cómo funciona
+## How it works
 
-Google Docs ya no dibuja el texto en HTML: lo **rasteriza en un `<canvas>`**.
-Dentro de un canvas no hay nodos que colorear, así que ningún CSS puede
-cambiar el color del texto de tu documento. Eso parte el problema en dos
-mitades con soluciones distintas.
+Google Docs no longer renders text as HTML — it **rasterizes it into a
+`<canvas>`**. There are no nodes inside a canvas to style, so no CSS can
+change the color of your document's text. That splits the problem into two
+halves with different solutions.
 
-### La interfaz
+### The interface
 
-Docs moderno pinta con tokens `--gm3-sys-color-*`. Redefinirlos cubre gran
-parte del trabajo de una vez, más limpio que perseguir cien selectores. El
-resto son reglas puntuales para lo que se resiste (Docs pinta algunas
-etiquetas con sus colores de marca, por encima de los tokens).
+Modern Docs paints with `--gm3-sys-color-*` design tokens. Redefining those
+covers most of the ground in one go, which is far cleaner than chasing a
+hundred selectors. The rest is targeted rules for what resists — Docs paints
+some labels with its own brand colors, overriding the tokens.
 
-Los sprites de iconos son PNG oscuros que desaparecerían sobre fondo oscuro,
-así que se invierten — excluyendo los logos de producto, que sí son a color.
+Icon sprites are dark PNGs that would vanish against a dark background, so
+they get inverted — excluding product logos, which are genuinely full-color.
 
-### La hoja
+### The page
 
-Se invierte el lienzo entero:
+The canvas is inverted wholesale:
 
 ```css
 canvas.kix-canvas-tile-content {
@@ -68,45 +69,45 @@ canvas.kix-canvas-tile-content {
 }
 ```
 
-- `invert(1)` — el papel blanco pasa a negro, el texto negro pasa a blanco.
-- `hue-rotate(180deg)` — devuelve su tono real a fotos y texto de color.
-- `mix-blend-mode: screen` — deja pasar el fondo de la hoja donde el lienzo
-  quedó negro, tiñendo el papel con el color de la paleta en vez de un negro
-  plano.
-- `brightness()` — sin esto el texto sale **blanco puro**. Con `screen` sobre
-  un fondo opaco el resultado es `255 − (1−b)·(255 − fondo)`, así que se
-  despeja `b` para que el blanco caiga justo en el gris de texto de cada
-  paleta. De ahí sale `--sd-ink`: 0.66, 0.69 y 0.89 respectivamente.
+- `invert(1)` — white paper becomes black, black text becomes white.
+- `hue-rotate(180deg)` — restores the real hue of photos and colored text.
+- `mix-blend-mode: screen` — lets the page background show through wherever
+  the canvas turned black, tinting the paper with the palette color instead
+  of flat black.
+- `brightness()` — without it the text comes out **pure white**. Screening
+  over an opaque background yields `255 − (1−b)·(255 − background)`, so solve
+  for `b` to land that white exactly on each palette's text gray. That's
+  where `--sd-ink` comes from: 0.66, 0.69 and 0.89 respectively.
 
-## Limitaciones
+## Limitations
 
-Son de la técnica, no del código, y las comparte cualquier tema oscuro para
-Docs:
+These come from the technique, not the code, and any dark theme for Docs
+shares them:
 
-- **Las imágenes de tu documento se invierten**, porque están pintadas en el
-  mismo canvas. El `hue-rotate` las deja aceptables, no perfectas.
-- **`mix-blend-mode` puede variar según la GPU.** El popup trae «negro plano»
-  como alternativa si la hoja se ve rara.
-- **Everforest y Rosé Pine no clavan el tono del texto**, solo la
-  luminosidad. Sus grises son cálidos y `screen` sobre un fondo frío solo
-  puede sumar luz, no restar azul.
+- **Images in your document get inverted**, because they're painted on the
+  same canvas. The `hue-rotate` keeps them acceptable, not perfect.
+- **`mix-blend-mode` can vary by GPU.** The popup ships a "flat black" option
+  in case the page looks wrong.
+- **Everforest and Rosé Pine don't nail the text hue**, only the lightness.
+  Their grays are warm, and screening over a cool background can only add
+  light, never subtract blue.
 
-## Permisos
+## Permissions
 
-Solo `storage`, para recordar la paleta elegida. Sin service worker, sin
-peticiones de red, y el content script corre únicamente en
+Only `storage`, to remember the selected palette. No service worker, no
+network requests, and the content script runs solely on
 `docs.google.com/document/*`.
 
-## Volver atrás
+## Reverting
 
-Cada bloque que oculta algo está comentado como tal en `css/theme.css`. Para
-recuperar los promos, el logo, el avatar o el panel de complementos, comenta
-el bloque correspondiente. El interruptor del popup desactiva todo de golpe.
+Every block that hides something is commented as such in `css/theme.css`. To
+bring back the promos, the logo, the avatar or the add-on panel, comment out
+the matching block. The popup toggle disables everything at once.
 
-## Créditos
+## Credits
 
-La técnica de invertir el canvas está tomada de
-[DocsAfterDark](https://github.com/waymondrang/docsafterdark), de Raymond
-Wang. El CSS de este repo es propio.
+The canvas inversion technique comes from
+[DocsAfterDark](https://github.com/waymondrang/docsafterdark) by Raymond
+Wang. The CSS in this repo is original.
 
 MIT.

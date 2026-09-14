@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Selenized Docs",
   "version": "1.0.0",
-  "description": "Aplica la paleta Selenized Dark a Google Docs, la misma de la terminal.",
+  "description": "Dark theme for Google Docs with perceptually calibrated palettes. Less eye strain, no promos or clutter in the toolbar.",
   "permissions": ["storage"],
   "content_scripts": [
     {

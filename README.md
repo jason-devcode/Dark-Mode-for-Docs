@@ -1,4 +1,4 @@
-# Selenized Docs
+# Dark Mode for Docs
 
 A dark theme for Google Docs built on perceptually uniform palettes, designed
 to cut visual noise and eye strain during long sessions.

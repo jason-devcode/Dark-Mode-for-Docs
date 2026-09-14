@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Selenized Docs",
+  "name": "Dark Mode for Docs",
   "version": "1.0.0",
   "description": "Dark theme for Google Docs with perceptually calibrated palettes. Less eye strain, no promos or clutter in the toolbar.",
   "permissions": ["storage"],
@@ -13,7 +13,7 @@
     }
   ],
   "action": {
-    "default_title": "Selenized Docs",
+    "default_title": "Dark Mode for Docs",
     "default_popup": "popup.html"
   },
   "icons": {

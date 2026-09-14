@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Selenized Docs</title>
+<style>
+  :root {
+    --bg: #103c48; --bg1: #184956; --bg2: #2d5b69;
+    --fg: #adbcbc; --fg1: #cad8d9; --dim: #72898f; --accent: #4695f7;
+  }
+  body {
+    margin: 0; padding: 16px; width: 236px;
+    background: var(--bg); color: var(--fg);
+    font: 13px/1.5 system-ui, sans-serif;
+  }
+  h1 { margin: 0 0 14px; font-size: 13px; font-weight: 600; color: var(--fg1); }
+  label.row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px; cursor: pointer;
+  }
+  select {
+    width: 100%; margin: 6px 0 14px; padding: 6px 8px;
+    background: var(--bg1); color: var(--fg);
+    border: 1px solid var(--bg2); border-radius: 4px; font: inherit;
+  }
+  .lbl { color: var(--dim); font-size: 11px; text-transform: uppercase;
+         letter-spacing: .06em; }
+  input[type=checkbox] { accent-color: var(--accent); width: 16px; height: 16px; }
+  .hint { color: var(--dim); font-size: 11px; margin: 0; }
+</style>
+
+<h1>Selenized Docs</h1>
+
+<label class="row">
+  <span>Tema activado</span>
+  <input type="checkbox" id="enabled">
+</label>
+
+<div class="lbl">Paleta</div>
+<select id="theme">
+  <option value="selenized">Selenized Dark</option>
+  <option value="everforest">Everforest Soft</option>
+  <option value="rosepine">Rosé Pine Moon</option>
+</select>
+
+<div class="lbl">Hoja</div>
+<select id="paper">
+  <option value="tinted">Teñida con la paleta</option>
+  <option value="plain">Negro plano</option>
+</select>
+
+<p class="hint">Si la hoja se ve rara, prueba «negro plano».</p>
+
+<script src="js/popup.js"></script>

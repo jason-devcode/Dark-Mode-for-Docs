@@ -1,0 +1,59 @@
+/* Paletas. Mismos valores que ~/.config/kitty/themes/ */
+
+:root,
+:root[data-sd-theme="selenized"] {
+  --sd-bg:       #103c48;  /* fondo de la app  */
+  --sd-bg-1:     #184956;  /* barras, menús    */
+  --sd-bg-2:     #2d5b69;  /* hover, bordes    */
+  --sd-paper:    #0d3540;  /* la hoja          */
+  --sd-fg:       #adbcbc;
+  --sd-fg-1:     #cad8d9;  /* texto destacado  */
+  --sd-dim:      #72898f;  /* texto atenuado   */
+  --sd-accent:   #4695f7;
+  --sd-accent-2: #41c7b9;
+  --sd-warn:     #dbb32d;
+  --sd-danger:   #fa5750;
+  --sd-border:   #2d5b69;
+
+  /* Brillo del canvas: calibrado para que el blanco del invert
+     caiga en el gris de texto de esta paleta, no en blanco puro. */
+  --sd-ink:      0.66;
+}
+
+:root[data-sd-theme="everforest"] {
+  --sd-bg:       #333c43;
+  --sd-bg-1:     #3a464c;
+  --sd-bg-2:     #4f5b58;
+  --sd-paper:    #2f383e;
+  --sd-fg:       #d3c6aa;
+  --sd-fg-1:     #e4dbc4;
+  --sd-dim:      #859289;
+  --sd-accent:   #7fbbb3;
+  --sd-accent-2: #83c092;
+  --sd-warn:     #dbbc7f;
+  --sd-danger:   #e67e80;
+  --sd-border:   #4f5b58;
+
+  /* Brillo del canvas: calibrado para que el blanco del invert
+     caiga en el gris de texto de esta paleta, no en blanco puro. */
+  --sd-ink:      0.69;
+}
+
+:root[data-sd-theme="rosepine"] {
+  --sd-bg:       #232136;
+  --sd-bg-1:     #2a273f;
+  --sd-bg-2:     #44415a;
+  --sd-paper:    #1f1d2e;
+  --sd-fg:       #e0def4;
+  --sd-fg-1:     #f2f0ff;
+  --sd-dim:      #6e6a86;
+  --sd-accent:   #9ccfd8;
+  --sd-accent-2: #c4a7e7;
+  --sd-warn:     #f6c177;
+  --sd-danger:   #eb6f92;
+  --sd-border:   #44415a;
+
+  /* Brillo del canvas: calibrado para que el blanco del invert
+     caiga en el gris de texto de esta paleta, no en blanco puro. */
+  --sd-ink:      0.89;
+}

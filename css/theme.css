@@ -1,0 +1,382 @@
+/* Selenized Docs — tema.
+   Todo cuelga de html:not([data-sd="off"]) para que el interruptor del popup
+   sea instantáneo y no haya destello blanco al cargar. */
+
+/* ============================================================ tokens GM3 ===
+   Docs moderno pinta gran parte de su interfaz con estas variables.
+   Redefinirlas cubre mucho terreno de una sola vez. */
+html:not([data-sd="off"]) {
+  --gm3-sys-color-surface:                  var(--sd-bg)   !important;
+  --gm3-sys-color-surface-container:        var(--sd-bg-1) !important;
+  --gm3-sys-color-surface-container-low:    var(--sd-bg)   !important;
+  --gm3-sys-color-surface-container-lowest: var(--sd-bg)   !important;
+  --gm3-sys-color-surface-container-high:   var(--sd-bg-1) !important;
+  --gm3-sys-color-surface-container-highest:var(--sd-bg-2) !important;
+  --gm3-sys-color-on-surface:               var(--sd-fg-1) !important;
+  --gm3-sys-color-on-surface-variant:       var(--sd-fg)   !important;
+  --gm3-sys-color-outline:                  var(--sd-border) !important;
+  --gm3-sys-color-outline-variant:          var(--sd-border) !important;
+  --gm3-sys-color-primary:                  var(--sd-accent) !important;
+  --gm3-sys-color-on-primary:               var(--sd-bg)   !important;
+  --gm3-sys-color-secondary-container:      var(--sd-bg-2) !important;
+  --gm3-sys-color-on-secondary-container:   var(--sd-fg-1) !important;
+  --gm3-sys-color-error:                    var(--sd-danger) !important;
+  color-scheme: dark;
+}
+
+/* ================================================================ marco === */
+html:not([data-sd="off"]) body,
+html:not([data-sd="off"]) #docs-chrome,
+html:not([data-sd="off"]) #docs-header,
+html:not([data-sd="off"]) #docs-bars,
+html:not([data-sd="off"]) #docs-toolbar-wrapper,
+html:not([data-sd="off"]) #docs-banner-container,
+html:not([data-sd="off"]) .docs-menubars,
+html:not([data-sd="off"]) #docs-additional-bars,
+html:not([data-sd="off"]) .docs-companion-app-switcher-container,
+html:not([data-sd="off"]) .companion-app-switcher-guest-container,
+html:not([data-sd="off"]) .companion-collapser-button-container {
+  background-color: var(--sd-bg) !important;
+  color: var(--sd-fg) !important;
+  border-color: var(--sd-border) !important;
+}
+
+/* Título del documento */
+html:not([data-sd="off"]) .docs-title-input,
+html:not([data-sd="off"]) .docs-title-input-label-inner {
+  background-color: transparent !important;
+  color: var(--sd-fg-1) !important;
+}
+html:not([data-sd="off"]) .docs-title-input:hover,
+html:not([data-sd="off"]) .docs-title-input:focus {
+  background-color: var(--sd-bg-1) !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================== menús ===== */
+html:not([data-sd="off"]) #docs-menubar .menu-button,
+html:not([data-sd="off"]) .docs-menubar .goog-control {
+  color: var(--sd-fg) !important;
+  background-color: transparent !important;
+}
+html:not([data-sd="off"]) #docs-menubar .menu-button:hover,
+html:not([data-sd="off"]) #docs-menubar .goog-control-hover,
+html:not([data-sd="off"]) #docs-menubar .goog-control-open {
+  background-color: var(--sd-bg-2) !important;
+  color: var(--sd-fg-1) !important;
+}
+
+html:not([data-sd="off"]) .goog-menu,
+html:not([data-sd="off"]) .docs-material .goog-menu,
+html:not([data-sd="off"]) .jfk-bubble,
+html:not([data-sd="off"]) .docs-bubble,
+html:not([data-sd="off"]) .goog-menu-vertical {
+  background-color: var(--sd-bg-1) !important;
+  border: 1px solid var(--sd-border) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,.45) !important;
+  color: var(--sd-fg) !important;
+}
+html:not([data-sd="off"]) .goog-menuitem,
+html:not([data-sd="off"]) .goog-menuitem-content,
+html:not([data-sd="off"]) .goog-menuheader {
+  color: var(--sd-fg) !important;
+}
+html:not([data-sd="off"]) .goog-menuitem-highlight,
+html:not([data-sd="off"]) .goog-menuitem-hover {
+  background-color: var(--sd-bg-2) !important;
+}
+html:not([data-sd="off"]) .goog-menuitem-disabled .goog-menuitem-content,
+html:not([data-sd="off"]) .goog-menuitem-accel,
+html:not([data-sd="off"]) .goog-menuitem-mnemonic-hint {
+  color: var(--sd-dim) !important;
+}
+html:not([data-sd="off"]) .apps-hoverable-menu-separator-top,
+html:not([data-sd="off"]) .goog-menuseparator {
+  border-color: var(--sd-border) !important;
+  background-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .apps-hoverable-menu-separator-bottom { border: none !important; }
+
+/* =========================================================== barra de h. == */
+html:not([data-sd="off"]) #docs-toolbar,
+html:not([data-sd="off"]) .goog-toolbar,
+html:not([data-sd="off"]) #docs-side-toolbar,
+html:not([data-sd="off"]) #docs-omnibox-toolbar {
+  background-color: var(--sd-bg-1) !important;
+  border-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .goog-toolbar-button,
+html:not([data-sd="off"]) .goog-toolbar-menu-button,
+html:not([data-sd="off"]) .goog-toolbar-combo-button,
+html:not([data-sd="off"]) .goog-toolbar-menu-button-caption,
+html:not([data-sd="off"]) .goog-toolbar-combo-button-caption {
+  color: var(--sd-fg) !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+html:not([data-sd="off"]) .goog-toolbar-button-hover,
+html:not([data-sd="off"]) .goog-toolbar-menu-button-hover,
+html:not([data-sd="off"]) .goog-toolbar-combo-button-hover,
+html:not([data-sd="off"]) .goog-toolbar-button-checked {
+  background-color: var(--sd-bg-2) !important;
+  border-color: var(--sd-bg-2) !important;
+}
+html:not([data-sd="off"]) .goog-toolbar-separator {
+  border-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .goog-toolbar-button-disabled,
+html:not([data-sd="off"]) .goog-toolbar-menu-button-disabled { opacity: .38 !important; }
+
+/* Campos de texto (zoom, tamaño de fuente, buscar en el menú) */
+html:not([data-sd="off"]) .jfk-textinput,
+html:not([data-sd="off"]) .goog-toolbar-combo-button-input,
+html:not([data-sd="off"]) .docs-omnibox-input {
+  background-color: var(--sd-bg) !important;
+  color: var(--sd-fg) !important;
+  border-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .docs-omnibox-input::placeholder { color: var(--sd-dim) !important; }
+
+/* Botón Compartir */
+html:not([data-sd="off"]) .jfk-button-action,
+html:not([data-sd="off"]) .scb-split-button {
+  background-color: var(--sd-accent) !important;
+  color: var(--sd-bg) !important;
+  border-color: var(--sd-accent) !important;
+}
+html:not([data-sd="off"]) .jfk-button-standard {
+  background-color: var(--sd-bg-1) !important;
+  color: var(--sd-fg) !important;
+  border-color: var(--sd-border) !important;
+}
+
+/* =================================================== iconos (sprites) =====
+   Docs usa sprites PNG oscuros. Sobre fondo oscuro desaparecen, así que se
+   invierten. grayscale primero para que no salgan de colores raros. */
+html:not([data-sd="off"]) .docs-icon-img,
+html:not([data-sd="off"]) .docs-icon-img-container {
+  filter: grayscale(1) invert(1) brightness(1.05) !important;
+}
+/* Los iconos de producto (Docs, Drive, Meet, Keep...) sí son a color:
+   invertirlos los arruina, así que se excluyen. */
+html:not([data-sd="off"]) .docs-branding-icon-img,
+html:not([data-sd="off"]) .app-switcher-button-icon-container,
+html:not([data-sd="off"]) .gb_X,
+html:not([data-sd="off"]) [class*="docs-icon-meet"],
+html:not([data-sd="off"]) [class*="docs-icon-drive"],
+html:not([data-sd="off"]) [class*="docs-icon-photos"],
+html:not([data-sd="off"]) [class*="-2026-"] {
+  filter: none !important;
+}
+/* Los SVG con currentColor ya heredan el color, no tocarlos */
+html:not([data-sd="off"]) svg { filter: none !important; }
+
+/* ============================================================ reglas ====== */
+html:not([data-sd="off"]) .docs-ruler,
+html:not([data-sd="off"]) #kix-horizontal-ruler,
+html:not([data-sd="off"]) #kix-vertical-ruler,
+html:not([data-sd="off"]) .docs-ruler-face {
+  background-color: var(--sd-bg) !important;
+  color: var(--sd-dim) !important;
+}
+html:not([data-sd="off"]) .docs-ruler-background-inner {
+  background-color: var(--sd-bg-2) !important;
+}
+html:not([data-sd="off"]) .docs-ruler-face-number { color: var(--sd-dim) !important; }
+html:not([data-sd="off"]) .docs-ruler-face-minor-division,
+html:not([data-sd="off"]) .docs-ruler-face-major-division {
+  border-color: var(--sd-dim) !important;
+}
+
+/* ====================================================== área del editor === */
+html:not([data-sd="off"]) .kix-appview,
+html:not([data-sd="off"]) .kix-appview-editor,
+html:not([data-sd="off"]) .kix-appview-editor-container {
+  background-color: var(--sd-bg) !important;
+}
+
+/* ===================================================== LA HOJA (canvas) ===
+   Docs ya no dibuja el texto en HTML: lo rasteriza en un <canvas>, así que
+   no hay nodos que colorear. La única vía es invertir el lienzo entero.
+     invert(1)        -> papel blanco pasa a negro, texto negro pasa a blanco
+     hue-rotate(180)  -> devuelve su tono real a fotos y texto de color
+     mix-blend-mode   -> "screen" deja pasar el fondo de la hoja donde el
+                         lienzo quedó negro, tiñendo el papel del color de la
+                         paleta en vez de un negro plano. */
+html:not([data-sd="off"]) .kix-page-paginated,
+html:not([data-sd="off"]) .kix-page {
+  background-color: var(--sd-paper) !important;
+  box-shadow: none !important;
+  outline: 1px solid var(--sd-border) !important;
+}
+html:not([data-sd="off"]) canvas.kix-canvas-tile-content {
+  filter: invert(1) hue-rotate(180deg) brightness(var(--sd-ink)) !important;
+  mix-blend-mode: screen !important;
+  background: transparent !important;
+}
+/* Variante sin teñir, por si el blend da problemas en alguna GPU */
+html[data-sd-paper="plain"] canvas.kix-canvas-tile-content {
+  mix-blend-mode: normal !important;
+}
+
+/* Cursor y selección */
+html:not([data-sd="off"]) .kix-cursor-caret {
+  border-color: var(--sd-fg-1) !important;
+}
+
+/* ====================================================== barra lateral ===== */
+html:not([data-sd="off"]) .left-sidebar-container,
+html:not([data-sd="off"]) .navigation-widget,
+html:not([data-sd="off"]) .docs-companion-sidebar,
+html:not([data-sd="off"]) .companion-shell,
+html:not([data-sd="off"]) .docs-docos-activity-sidebar,
+html:not([data-sd="off"]) .docs-tiled-sidebar {
+  background-color: var(--sd-bg-1) !important;
+  color: var(--sd-fg) !important;
+  border-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .navigation-widget-header,
+html:not([data-sd="off"]) .chapter-item-label,
+html:not([data-sd="off"]) .navigation-item-content {
+  color: var(--sd-fg) !important;
+}
+html:not([data-sd="off"]) .chapter-item-label-and-buttons-container-selected {
+  background-color: var(--sd-bg-2) !important;
+}
+html:not([data-sd="off"]) .navigation-widget-empty-content { color: var(--sd-dim) !important; }
+
+/* ======================================================== comentarios ===== */
+html:not([data-sd="off"]) .docos-stream-view,
+html:not([data-sd="off"]) .docos-docoview-rootdocoview,
+html:not([data-sd="off"]) .docos-anchoreddocoview {
+  background-color: var(--sd-bg-1) !important;
+  color: var(--sd-fg) !important;
+  border-color: var(--sd-border) !important;
+}
+
+/* =========================================================== tooltips ===== */
+html:not([data-sd="off"]) .jfk-tooltip,
+html:not([data-sd="off"]) [class*="TooltipPlain-tooltip__surface"] {
+  background-color: var(--sd-bg-2) !important;
+  color: var(--sd-fg-1) !important;
+  border-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .jfk-tooltip-arrowimplafter { border-color: var(--sd-bg-2) transparent !important; }
+html:not([data-sd="off"]) .jfk-tooltip-arrowimplbefore { border-color: var(--sd-border) transparent !important; }
+
+/* ============================================================ diálogos ==== */
+html:not([data-sd="off"]) .modal-dialog,
+html:not([data-sd="off"]) .docs-dialog,
+html:not([data-sd="off"]) .jfk-dialog {
+  background-color: var(--sd-bg-1) !important;
+  color: var(--sd-fg) !important;
+  border-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) .modal-dialog-title,
+html:not([data-sd="off"]) .modal-dialog-title-text { color: var(--sd-fg-1) !important; }
+html:not([data-sd="off"]) .modal-dialog-bg { background-color: #000 !important; }
+
+/* Barra de scroll a juego */
+html:not([data-sd="off"]) ::-webkit-scrollbar { width: 12px; height: 12px; }
+html:not([data-sd="off"]) ::-webkit-scrollbar-track { background: var(--sd-bg); }
+html:not([data-sd="off"]) ::-webkit-scrollbar-thumb {
+  background: var(--sd-bg-2);
+  border: 3px solid var(--sd-bg);
+  border-radius: 6px;
+}
+html:not([data-sd="off"]) ::-webkit-scrollbar-thumb:hover { background: var(--sd-dim); }
+
+/* ================================================= panel de pestañas =====
+   Docs pinta estas etiquetas con sus propios colores de marca (el azul de
+   "Pestaña 1" viene de ahí). Se fuerzan a la paleta. */
+html:not([data-sd="off"]) .chapter-label-content,
+html:not([data-sd="off"]) .chapter-item-label,
+html:not([data-sd="off"]) .kix-outlines-widget-header-text-chaptered,
+html:not([data-sd="off"]) .kix-outlines-widget-header-text-unchaptered,
+html:not([data-sd="off"]) .navigation-widget-header,
+html:not([data-sd="off"]) .navigation-item-content,
+html:not([data-sd="off"]) .docs-revisions-authorwidget-hat {
+  color: var(--sd-fg-1) !important;
+  opacity: 1 !important;
+}
+/* La pestaña seleccionada: fondo, no color de texto chillón. */
+html:not([data-sd="off"]) .chapter-item-label-and-buttons-container-selected {
+  background-color: var(--sd-bg-2) !important;
+}
+html:not([data-sd="off"]) .chapter-item-label-and-buttons-container-selected
+  .chapter-label-content {
+  color: var(--sd-fg-1) !important;
+}
+/* Texto de ayuda y contadores, atenuados a propósito. */
+html:not([data-sd="off"]) .navigation-widget-empty-content,
+html:not([data-sd="off"]) .kix-outlines-widget-header-chapter-count,
+html:not([data-sd="off"]) .chapterDocoIndicatorViewText {
+  color: var(--sd-dim) !important;
+}
+/* Cabecera del panel: sin sombra ni línea dura. */
+html:not([data-sd="off"]) .kix-outlines-widget-header-shadow,
+html:not([data-sd="off"]) #navigation-widget-top-shadow {
+  box-shadow: none !important;
+  background: none !important;
+  border-color: var(--sd-border) !important;
+}
+
+/* ================================================= promos de la barra ====
+   "Actualizar" es el anuncio de Google One y el destello es el promo de
+   Gemini. No son funciones del documento; son lo más ruidoso de la barra.
+   Para recuperarlos, comenta este bloque. */
+html:not([data-sd="off"]) #workspace-onegoogle-pep-container,
+html:not([data-sd="off"]) #docs-sidekick-gen-ai-promo-button-container {
+  display: none !important;
+}
+
+/* Botón Compartir: sigue siendo el principal, pero sin el azul saturado. */
+html:not([data-sd="off"]) .jfk-button-action,
+html:not([data-sd="off"]) .scb-split-button {
+  background-color: var(--sd-bg-2) !important;
+  color: var(--sd-fg-1) !important;
+  border-color: var(--sd-border) !important;
+  box-shadow: none !important;
+}
+html:not([data-sd="off"]) .jfk-button-action:hover,
+html:not([data-sd="off"]) .scb-split-button:hover {
+  background-color: var(--sd-border) !important;
+}
+html:not([data-sd="off"]) #scb-quick-actions-menu-button {
+  background-color: var(--sd-bg-2) !important;
+  border-color: var(--sd-border) !important;
+}
+/* El candado/globo del botón Compartir es un sprite a color. */
+html:not([data-sd="off"]) .scb-button-icon {
+  filter: grayscale(1) brightness(1.6) !important;
+}
+
+/* Botones redondos de la barra (historial, comentarios, Meet): planos. */
+html:not([data-sd="off"]) .docs-appbar-circle-button,
+html:not([data-sd="off"]) .docs-titlebar-button.jfk-button-standard {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+html:not([data-sd="off"]) .docs-appbar-circle-button:hover {
+  background-color: var(--sd-bg-2) !important;
+}
+
+/* ===================================================== logo y avatar =====
+   El icono de Docs y el avatar de la cuenta son los dos únicos elementos a
+   todo color que quedaban en la barra. Ninguno aporta nada al documento. */
+html:not([data-sd="off"]) #docs-branding-container,
+html:not([data-sd="off"]) .onegoogle-material-minibar {
+  display: none !important;
+}
+/* Sin el logo, el título se pega al borde: se le devuelve el margen. */
+html:not([data-sd="off"]) #docs-titlebar-container {
+  margin-left: 16px !important;
+}
+
+/* ========================================= panel lateral de complementos =
+   La pastilla clara de abajo a la derecha es el desplegador del panel de
+   Calendar/Keep/Tasks. Se oculta junto con su franja. */
+html:not([data-sd="off"]) .docs-companion-app-switcher-container,
+html:not([data-sd="off"]) .companion-collapser-button-container {
+  display: none !important;
+}

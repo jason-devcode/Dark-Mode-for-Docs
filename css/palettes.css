@@ -1,25 +1,95 @@
-/* Paletas. Mismos valores que ~/.config/kitty/themes/ */
+/* Palettes. Same values used in kitty.
+   --sd-ink is computed, not hand-picked: with mix-blend-mode:screen the
+   result is 255-(1-b)*(255-background), so b is solved for so the white
+   produced by invert() lands on this palette's own text gray. */
 
+/* Selenized Dark */
 :root,
 :root[data-sd-theme="selenized"] {
-  --sd-bg:       #103c48;  /* fondo de la app  */
-  --sd-bg-1:     #184956;  /* barras, menús    */
-  --sd-bg-2:     #2d5b69;  /* hover, bordes    */
-  --sd-paper:    #0d3540;  /* la hoja          */
+  --sd-bg:       #103c48;
+  --sd-bg-1:     #184956;
+  --sd-bg-2:     #2d5b69;
+  --sd-paper:    #0d3540;
   --sd-fg:       #adbcbc;
-  --sd-fg-1:     #cad8d9;  /* texto destacado  */
-  --sd-dim:      #72898f;  /* texto atenuado   */
+  --sd-fg-1:     #cad8d9;
+  --sd-dim:      #72898f;
   --sd-accent:   #4695f7;
   --sd-accent-2: #41c7b9;
   --sd-warn:     #dbb32d;
   --sd-danger:   #fa5750;
   --sd-border:   #2d5b69;
-
-  /* Brillo del canvas: calibrado para que el blanco del invert
-     caiga en el gris de texto de esta paleta, no en blanco puro. */
   --sd-ink:      0.66;
 }
 
+/* Solarized Dark */
+:root[data-sd-theme="solarized"] {
+  --sd-bg:       #002b36;
+  --sd-bg-1:     #073642;
+  --sd-bg-2:     #0d4753;
+  --sd-paper:    #00252e;
+  --sd-fg:       #839496;
+  --sd-fg-1:     #93a1a1;
+  --sd-dim:      #586e75;
+  --sd-accent:   #268bd2;
+  --sd-accent-2: #2aa198;
+  --sd-warn:     #b58900;
+  --sd-danger:   #dc322f;
+  --sd-border:   #0d4753;
+  --sd-ink:      0.51;
+}
+
+/* Flexoki Dark */
+:root[data-sd-theme="flexoki"] {
+  --sd-bg:       #100f0f;
+  --sd-bg-1:     #1c1b1a;
+  --sd-bg-2:     #282726;
+  --sd-paper:    #0c0b0b;
+  --sd-fg:       #cecdc3;
+  --sd-fg-1:     #e6e4d9;
+  --sd-dim:      #878580;
+  --sd-accent:   #4385be;
+  --sd-accent-2: #3aa99f;
+  --sd-warn:     #d0a215;
+  --sd-danger:   #d14d41;
+  --sd-border:   #343331;
+  --sd-ink:      0.78;
+}
+
+/* Zenburn */
+:root[data-sd-theme="zenburn"] {
+  --sd-bg:       #3f3f3f;
+  --sd-bg-1:     #4f4f4f;
+  --sd-bg-2:     #5f5f5f;
+  --sd-paper:    #383838;
+  --sd-fg:       #dcdccc;
+  --sd-fg-1:     #f0efd0;
+  --sd-dim:      #709080;
+  --sd-accent:   #8cd0d3;
+  --sd-accent-2: #7f9f7f;
+  --sd-warn:     #f0dfaf;
+  --sd-danger:   #cc9393;
+  --sd-border:   #5f5f5f;
+  --sd-ink:      0.8;
+}
+
+/* Nord */
+:root[data-sd-theme="nord"] {
+  --sd-bg:       #2e3440;
+  --sd-bg-1:     #3b4252;
+  --sd-bg-2:     #434c5e;
+  --sd-paper:    #292f3a;
+  --sd-fg:       #d8dee9;
+  --sd-fg-1:     #eceff4;
+  --sd-dim:      #6d7894;
+  --sd-accent:   #88c0d0;
+  --sd-accent-2: #8fbcbb;
+  --sd-warn:     #ebcb8b;
+  --sd-danger:   #bf616a;
+  --sd-border:   #434c5e;
+  --sd-ink:      0.85;
+}
+
+/* Everforest Soft */
 :root[data-sd-theme="everforest"] {
   --sd-bg:       #333c43;
   --sd-bg-1:     #3a464c;
@@ -33,12 +103,95 @@
   --sd-warn:     #dbbc7f;
   --sd-danger:   #e67e80;
   --sd-border:   #4f5b58;
-
-  /* Brillo del canvas: calibrado para que el blanco del invert
-     caiga en el gris de texto de esta paleta, no en blanco puro. */
   --sd-ink:      0.69;
 }
 
+/* Gruvbox Material */
+:root[data-sd-theme="gruvbox"] {
+  --sd-bg:       #282828;
+  --sd-bg-1:     #32302f;
+  --sd-bg-2:     #45403d;
+  --sd-paper:    #232323;
+  --sd-fg:       #d4be98;
+  --sd-fg-1:     #ddc7a1;
+  --sd-dim:      #928374;
+  --sd-accent:   #7daea3;
+  --sd-accent-2: #89b482;
+  --sd-warn:     #d8a657;
+  --sd-danger:   #ea6962;
+  --sd-border:   #45403d;
+  --sd-ink:      0.68;
+}
+
+/* Kanagawa Wave */
+:root[data-sd-theme="kanagawa"] {
+  --sd-bg:       #1f1f28;
+  --sd-bg-1:     #2a2a37;
+  --sd-bg-2:     #363646;
+  --sd-paper:    #16161d;
+  --sd-fg:       #dcd7ba;
+  --sd-fg-1:     #e8e3cb;
+  --sd-dim:      #727169;
+  --sd-accent:   #7e9cd8;
+  --sd-accent-2: #7aa89f;
+  --sd-warn:     #e6c384;
+  --sd-danger:   #c34043;
+  --sd-border:   #363646;
+  --sd-ink:      0.79;
+}
+
+/* Catppuccin Frappé */
+:root[data-sd-theme="catppuccin"] {
+  --sd-bg:       #303446;
+  --sd-bg-1:     #292c3c;
+  --sd-bg-2:     #414559;
+  --sd-paper:    #292c3c;
+  --sd-fg:       #c6d0f5;
+  --sd-fg-1:     #dce0f7;
+  --sd-dim:      #838ba7;
+  --sd-accent:   #8caaee;
+  --sd-accent-2: #81c8be;
+  --sd-warn:     #e5c890;
+  --sd-danger:   #e78284;
+  --sd-border:   #51576d;
+  --sd-ink:      0.82;
+}
+
+/* Tokyo Night Storm */
+:root[data-sd-theme="tokyonight"] {
+  --sd-bg:       #24283b;
+  --sd-bg-1:     #1f2335;
+  --sd-bg-2:     #292e42;
+  --sd-paper:    #1f2335;
+  --sd-fg:       #c0caf5;
+  --sd-fg-1:     #d5dcf7;
+  --sd-dim:      #565f89;
+  --sd-accent:   #7aa2f7;
+  --sd-accent-2: #7dcfff;
+  --sd-warn:     #e0af68;
+  --sd-danger:   #f7768e;
+  --sd-border:   #3b4261;
+  --sd-ink:      0.81;
+}
+
+/* Iceberg Dark */
+:root[data-sd-theme="iceberg"] {
+  --sd-bg:       #161821;
+  --sd-bg-1:     #1e2132;
+  --sd-bg-2:     #2e313f;
+  --sd-paper:    #0f1117;
+  --sd-fg:       #c6c8d1;
+  --sd-fg-1:     #d2d4dd;
+  --sd-dim:      #6b7089;
+  --sd-accent:   #84a0c6;
+  --sd-accent-2: #89b8c2;
+  --sd-warn:     #e2a478;
+  --sd-danger:   #e27878;
+  --sd-border:   #2e313f;
+  --sd-ink:      0.78;
+}
+
+/* Rosé Pine Moon */
 :root[data-sd-theme="rosepine"] {
   --sd-bg:       #232136;
   --sd-bg-1:     #2a273f;
@@ -52,8 +205,22 @@
   --sd-warn:     #f6c177;
   --sd-danger:   #eb6f92;
   --sd-border:   #44415a;
-
-  /* Brillo del canvas: calibrado para que el blanco del invert
-     caiga en el gris de texto de esta paleta, no en blanco puro. */
   --sd-ink:      0.89;
+}
+
+/* Apprentice */
+:root[data-sd-theme="apprentice"] {
+  --sd-bg:       #262626;
+  --sd-bg-1:     #303030;
+  --sd-bg-2:     #444444;
+  --sd-paper:    #1c1c1c;
+  --sd-fg:       #bcbcbc;
+  --sd-fg-1:     #d0d0d0;
+  --sd-dim:      #6c6c6c;
+  --sd-accent:   #5f87af;
+  --sd-accent-2: #5f8787;
+  --sd-warn:     #87875f;
+  --sd-danger:   #af5f5f;
+  --sd-border:   #444444;
+  --sd-ink:      0.7;
 }

@@ -7,7 +7,7 @@
     --fg: #adbcbc; --fg1: #cad8d9; --dim: #72898f; --accent: #4695f7;
   }
   body {
-    margin: 0; padding: 16px; width: 236px;
+    margin: 0; padding: 16px; width: 244px;
     background: var(--bg); color: var(--fg);
     font: 13px/1.5 system-ui, sans-serif;
   }
@@ -21,6 +21,8 @@
     background: var(--bg1); color: var(--fg);
     border: 1px solid var(--bg2); border-radius: 4px; font: inherit;
   }
+  optgroup { background: var(--bg1); color: var(--dim); font-style: normal; }
+  option  { background: var(--bg1); color: var(--fg); }
   .lbl { color: var(--dim); font-size: 11px; text-transform: uppercase;
          letter-spacing: .06em; }
   input[type=checkbox] { accent-color: var(--accent); width: 16px; height: 16px; }
@@ -36,9 +38,25 @@
 
 <div class="lbl">Palette</div>
 <select id="theme">
-  <option value="selenized">Selenized Dark</option>
-  <option value="everforest">Everforest Soft</option>
-  <option value="rosepine">Rosé Pine Moon</option>
+  <optgroup label="Perceptually calibrated">
+    <option value="selenized">Selenized Dark</option>
+    <option value="solarized">Solarized Dark</option>
+    <option value="flexoki">Flexoki Dark</option>
+  </optgroup>
+  <optgroup label="Low contrast by design">
+    <option value="zenburn">Zenburn</option>
+    <option value="nord">Nord</option>
+    <option value="everforest">Everforest Soft</option>
+    <option value="gruvbox">Gruvbox Material</option>
+    <option value="apprentice">Apprentice</option>
+  </optgroup>
+  <optgroup label="Muted">
+    <option value="kanagawa">Kanagawa Wave</option>
+    <option value="catppuccin">Catppuccin Frappé</option>
+    <option value="tokyonight">Tokyo Night Storm</option>
+    <option value="iceberg">Iceberg Dark</option>
+    <option value="rosepine">Rosé Pine Moon</option>
+  </optgroup>
 </select>
 
 <div class="lbl">Page</div>

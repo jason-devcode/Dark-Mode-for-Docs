@@ -36,10 +36,28 @@ Switch them from the popup — they apply live, no reload.
 | Palette | Source |
 |---|---|
 | **Selenized Dark** (default) | [jan-warchol/selenized](https://github.com/jan-warchol/selenized) |
+| **Solarized Dark** | [altercation/solarized](https://github.com/altercation/solarized) |
+| **Flexoki Dark** | [kepano/flexoki](https://github.com/kepano/flexoki) |
+| **Zenburn** | [jnurmine/Zenburn](https://github.com/jnurmine/Zenburn) |
+| **Nord** | [nordtheme](https://www.nordtheme.com) |
 | **Everforest Soft** | [sainnhe/everforest](https://github.com/sainnhe/everforest) |
+| **Gruvbox Material** | [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material) |
+| **Apprentice** | [romainl/Apprentice](https://github.com/romainl/Apprentice) |
+| **Kanagawa Wave** | [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) |
+| **Catppuccin Frappé** | [catppuccin](https://github.com/catppuccin/catppuccin) |
+| **Tokyo Night Storm** | [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) |
+| **Iceberg Dark** | [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) |
 | **Rosé Pine Moon** | [rose-pine](https://rosepinetheme.com) |
 
-They're the same ones I run in kitty, so terminal and document match.
+They fall into three families, and the popup groups them that way:
+
+- **Perceptually calibrated** — lightness measured, not eyeballed. Selenized,
+  Solarized and Flexoki all define their colors so none outweighs the others.
+- **Low contrast by design** — built specifically to be easy on the eyes,
+  with judgement rather than math. Zenburn started this whole genre in 2002.
+- **Muted** — more personality, still restrained.
+
+Several of these are the ones I run in kitty, so terminal and document match.
 
 ## How it works
 
@@ -77,7 +95,7 @@ canvas.kix-canvas-tile-content {
 - `brightness()` — without it the text comes out **pure white**. Screening
   over an opaque background yields `255 − (1−b)·(255 − background)`, so solve
   for `b` to land that white exactly on each palette's text gray. That's
-  where `--sd-ink` comes from: 0.66, 0.69 and 0.89 respectively.
+  where `--sd-ink` comes from. It's computed per palette, not hand-picked.
 
 ## Limitations
 
